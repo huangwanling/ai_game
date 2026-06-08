@@ -1,0 +1,9 @@
+# 忽略 Streamlit 的本機秘密金鑰檔案（絕對不推上 GitHub）
+.streamlit/secrets.toml
+
+# 忽略 Python 虛擬環境與快取檔案（選配，能讓你的 GitHub 保持乾淨）
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
