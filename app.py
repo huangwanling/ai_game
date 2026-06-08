@@ -42,7 +42,7 @@ if "history" not in st.session_state:
     st.session_state.key_idx = 0
     
     try:
-        keys = [st.secrets.get(f"GEMINI_API_KEY_{i}") for i in range(1,7) if st.secrets.get(f"GEMINI_API_KEY_{i}")]
+        keys = [st.secrets.get(f"GEMINI_API_KEY_{i}") for i in range(1, 6) if st.secrets.get(f"GEMINI_API_KEY_{i}")]
         resp = call_gemini_api(st.session_state.history, keys[0])
         st.session_state.history.append({"role": "model", "parts": [{"text": resp}]})
     except Exception as e:
@@ -60,7 +60,7 @@ if user_input := st.chat_input("向阿吉提問..."):
     st.session_state.history.append({"role": "user", "parts": [{"text": user_input}]})
     with st.spinner("阿吉正在腦海中確認..."):
         try:
-            keys = [st.secrets.get(f"GEMINI_API_KEY_{i}") for i in range(1, 7) if st.secrets.get(f"GEMINI_API_KEY_{i}")]
+            keys = [st.secrets.get(f"GEMINI_API_KEY_{i}") for i in range(1, 6) if st.secrets.get(f"GEMINI_API_KEY_{i}")]
             resp = call_gemini_api(st.session_state.history, keys[st.session_state.key_idx % len(keys)])
             st.session_state.history.append({"role": "model", "parts": [{"text": resp}]})
             st.rerun()
