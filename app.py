@@ -6,7 +6,7 @@ st.set_page_config(page_title="阿吉的海龜湯", layout="wide")
 st.title("🐢 阿吉的海龜湯猜謎實驗室")
 
 # 核心參數
-MODEL_NAME = "gemini-2.5-flash"
+MODEL_NAME = "gemini-3.1-flash-lite"
 
 # =====================================================================
 # 1. 強化版提示詞：強制隱藏謎底，並設定遊戲目標
